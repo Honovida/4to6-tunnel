@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/4to6tunnelstart
-ExecStop=/usr/bin/4to6tunnelstop
+ExecStart=/usr/bin/4to6tunnelstart2
+ExecStop=/usr/bin/4to6tunnelstop2
 RemainAfterExit=true
 
 [Install]
