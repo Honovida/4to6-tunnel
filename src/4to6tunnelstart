@@ -1,15 +1,15 @@
 #!/bin/bash
 
 if [ "$UID" -ne 0 ]; then
-    sudo /usr/bin/4to6tunnelstart
+    sudo /usr/bin/4to6tunnelstart2
     exit $?
 fi
 
-source /etc/4to6tunnel/conf.sh
+source /etc/4to6tunnel2/conf.sh
 
-ip -6 tunnel add 4to6tunnel mode ip4ip6 remote "$IP4TO6TUNNEL_REMOTE" local "$IP4TO6TUNNEL_LOCAL"
-ip addr add "$IP4TO6TUNNEL_IP4"/"$IP4TO6TUNNEL_IP4NETMASK" dev 4to6tunnel
-ip link set dev 4to6tunnel up
+ip -6 tunnel add 4to6tunnel2 mode ip4ip6 remote "$IP4TO6TUNNEL_REMOTE" local "$IP4TO6TUNNEL_LOCAL"
+ip addr add "$IP4TO6TUNNEL_IP4"/"$IP4TO6TUNNEL_IP4NETMASK" dev 4to6tunnel2
+ip link set dev 4to6tunnel2 up
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 exit 0
